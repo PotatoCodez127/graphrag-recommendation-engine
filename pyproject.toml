@@ -1,0 +1,37 @@
+[project]
+name = "graphrag-recommendation-engine"
+version = "0.1.0"
+description = "Institutional-grade GraphRAG recommendation engine using NetworkX and Ollama."
+dependencies = [
+    "ollama>=0.6.0",
+    "networkx>=3.1",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["graph_engine"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.format]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+known_first_party = ["graph_engine"]
+line_length = 100
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
